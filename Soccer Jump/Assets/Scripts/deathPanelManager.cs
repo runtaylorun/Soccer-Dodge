@@ -16,7 +16,7 @@ public class deathPanelManager : MonoBehaviour {
 
 	void Update () {
 		moveBallScript = soccerBall.GetComponent<moveBall> ();
-		tempPlayerDead = moveBallScript.playerDead;
+		tempPlayerDead = moveBall.playerDead;
 		if (tempPlayerDead == true) { 		// If the playr is dead, show the death panel	
 			panel.SetActive (true);
 		}

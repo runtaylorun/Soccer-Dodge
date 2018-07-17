@@ -7,8 +7,9 @@ public class moveBall : MonoBehaviour {
 
 	public float ballSpeed;
 	public float ballHeight;
-	public bool playerDead;
-	public int upOrDown;
+    public static bool playerDead;
+    public int upOrDown;
+    private bool neverDone = true;
 
 	public static Animator anim;
 	private Transform trans;
@@ -22,9 +23,9 @@ public class moveBall : MonoBehaviour {
 		ballRigidBody = GetComponent<Rigidbody2D> ();
 		trans = GetComponent<Transform> ();
 		scoreScript.scoreValue = 0;
-		StartCoroutine ("DelayStart");
 	}
 
+	
 
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -60,6 +61,9 @@ public class moveBall : MonoBehaviour {
 			ballSpeed = 0;
 			ballRigidBody.velocity = Vector2.zero;
 			ballRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+            Controller.didTouch = false;
+            neverDone = true;
+            CountDown.neverDone = true;
 		}
 	}
 	IEnumerator DelayStart() {
@@ -69,7 +73,12 @@ public class moveBall : MonoBehaviour {
 
 
 
-	void Update () {
+    void Update () {
+        if (Controller.didTouch == true && neverDone == true)
+        {
+            StartCoroutine("DelayStart");
+            neverDone = false;
+        }
 		if (ballRigidBody.velocity.x > 0) {
 			trans.Rotate (Vector3.forward * -10);
 		} else if (ballRigidBody.velocity.x < 0) {

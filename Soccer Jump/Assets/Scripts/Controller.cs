@@ -6,6 +6,7 @@ public class Controller : MonoBehaviour {
 	public float jumpForce;
 	public static bool canJump = true;
 	public static bool canCrouch = true;
+    public static bool didTouch = false;
 
 	private Rigidbody2D playerRigidBody;
 	private BoxCollider2D playerCollider;
@@ -17,7 +18,8 @@ public class Controller : MonoBehaviour {
 		
 
 	void Update () {
-		if (Input.touchCount > 0) {
+		if (Input.touchCount > 0 && moveBall.playerDead == false) {
+            didTouch = true;
 			var touch = Input.GetTouch (0);
 			if (touch.position.x < Screen.width / 2 && canJump == true) {
 				playerRigidBody.velocity = new Vector2 (playerRigidBody.velocity.x, jumpForce);

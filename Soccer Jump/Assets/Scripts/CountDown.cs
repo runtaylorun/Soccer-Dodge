@@ -4,15 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CountDown : MonoBehaviour {
 	public Text cntDown;
+    public GameObject tapDwn;
+    public GameObject holdDwn;
+    public Text tapTxt;
+    public Text holdTxt;
+    public static bool neverDone = true;
 
 
 	void Start() {
 		cntDown = GetComponent<Text>();
-		StartCoroutine ("getReady");
+        cntDown.text = "";
 	}
-	void Update() {
-		
+
+	private void Update()
+	{
+        if (Controller.didTouch == true && neverDone == true)
+        {
+            StartCoroutine("getReady");
+            neverDone = false;
+        }
 	}
+
 	IEnumerator getReady () { // Function for counting down at the beginning
 
 		cntDown.text = "3";
@@ -28,6 +40,10 @@ public class CountDown : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 
 		cntDown.text = "";
+        tapDwn.SetActive(false);
+        holdDwn.SetActive(false);
+        tapTxt.text = "";
+        holdTxt.text = "";
 
 
 	}
