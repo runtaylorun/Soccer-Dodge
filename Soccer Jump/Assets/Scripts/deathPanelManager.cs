@@ -6,6 +6,9 @@ using UnityEngine;
 public class deathPanelManager : MonoBehaviour {
 
 	public GameObject soccerBall;
+    public Text endScore;
+    public Text currentCoins;
+    public Text coinsAdded;
 	private moveBall moveBallScript;
 	private bool tempPlayerDead;
 	public GameObject panel;
@@ -19,6 +22,9 @@ public class deathPanelManager : MonoBehaviour {
 		tempPlayerDead = moveBall.playerDead;
 		if (tempPlayerDead == true) { 		// If the playr is dead, show the death panel	
 			panel.SetActive (true);
+            endScore.text = "Current Score " + scoreScript.scoreValue;
+            currentCoins.text = "Coins ";
+            coinsAdded.text = "Coins Added ";
 		}
 	}
 
