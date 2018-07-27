@@ -12,6 +12,7 @@ public class deathPanelManager : MonoBehaviour {
 	private moveBall moveBallScript;
 	private bool tempPlayerDead;
 	public GameObject panel;
+    public LevelChanger levelChangingScript1;
 	void Start () {
 		panel.SetActive (false);
 	}
@@ -29,11 +30,11 @@ public class deathPanelManager : MonoBehaviour {
 	}
 
 	public void toGame() {					// Function to load the game
-		Application.LoadLevel ("Game");
+        levelChangingScript1.FadeToLevel(1);
 	}
 
 	public void toMenu() {					// Function to go to the main menu
-		Application.LoadLevel ("mainMenu");
+        levelChangingScript1.FadeToLevel(0);
 	}
 		
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class menuManager : MonoBehaviour {
 
+    public LevelChanger levelChangingScript;
 	public void toGame() {					// Function that load the game level
-		Application.LoadLevel ("Game");
+        levelChangingScript.FadeToLevel(1);
 	}
 }
