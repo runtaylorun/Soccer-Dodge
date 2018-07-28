@@ -10,6 +10,8 @@ public class moveBall : MonoBehaviour {
     public static bool playerDead;
     public int upOrDown;
     private bool neverDone = true;
+    public AudioSource kick;
+    public AudioSource dead;
 
 	public static Animator anim;
 	private Transform trans;
@@ -31,6 +33,7 @@ public class moveBall : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Kicker 2") {
 			kicker2Anim.anim.SetTrigger ("Det2");
+            kick.Play();
 			ballSpeed = -18;
 			upOrDown = Random.Range (1, 3);
 			scoreScript.scoreValue += 1;
@@ -42,6 +45,7 @@ public class moveBall : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "Kicker 1") {
 			kicker1Anim.anim.SetTrigger ("Det1");
+            kick.Play();
 			ballSpeed = 18;
 			upOrDown = Random.Range (1, 3);
 			scoreScript.scoreValue += 1;
@@ -58,6 +62,7 @@ public class moveBall : MonoBehaviour {
 			PlayerCollision.anim.SetBool ("isCrouching", false);
 			PlayerCollision.anim.SetBool ("isDead", true);
 			anim.SetBool ("isDead", true);
+            dead.Play();
 			ballSpeed = 0;
 			ballRigidBody.velocity = Vector2.zero;
 			ballRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;

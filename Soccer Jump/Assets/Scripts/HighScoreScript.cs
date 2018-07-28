@@ -19,6 +19,7 @@ public class HighScoreScript : MonoBehaviour {
 	
 
 	void Update () {
-		PlayerPrefs.SetInt ("High Score", highScore); 	// Holds the value of high score even after you close the app
+		PlayerPrefs.SetInt ("High Score", highScore);// Holds the value of high score even after you close the app
+
 	}
 }
