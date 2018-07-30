@@ -5,7 +5,10 @@ using UnityEngine;
 public class menuManager : MonoBehaviour {
 
     public LevelChanger levelChangingScript;
-	public void toGame() {					// Function that load the game level
+    public AudioSource btnPress;
+
+	public void toGame() {
+        btnPress.Play();
         levelChangingScript.FadeToLevel(1);
 	}
 }

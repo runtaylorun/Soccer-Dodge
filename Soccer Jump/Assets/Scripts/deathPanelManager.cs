@@ -13,6 +13,7 @@ public class deathPanelManager : MonoBehaviour {
 	private bool tempPlayerDead;
 	public GameObject panel;
     public LevelChanger levelChangingScript1;
+    public AudioSource btnTap;
 	void Start () {
 		panel.SetActive (false);
 	}
@@ -23,17 +24,19 @@ public class deathPanelManager : MonoBehaviour {
 		tempPlayerDead = moveBall.playerDead;
 		if (tempPlayerDead == true) { 		// If the playr is dead, show the death panel	
 			panel.SetActive (true);
-            endScore.text = "Current Score " + scoreScript.scoreValue;
+            endScore.text = scoreScript.scoreValue.ToString();
             currentCoins.text = "Coins ";
             coinsAdded.text = "Coins Added ";
 		}
 	}
 
-	public void toGame() {					// Function to load the game
+	public void toGame() {
+        btnTap.Play();
         levelChangingScript1.FadeToLevel(1);
 	}
 
-	public void toMenu() {					// Function to go to the main menu
+	public void toMenu() {
+        btnTap.Play();
         levelChangingScript1.FadeToLevel(0);
 	}
 		

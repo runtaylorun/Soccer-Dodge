@@ -9,6 +9,8 @@ public class CountDown : MonoBehaviour {
     public Text tapTxt;
     public Text holdTxt;
     public static bool neverDone = true;
+    public AudioSource countDown;
+    public AudioSource go;
 
 
 	void Start() {
@@ -28,15 +30,19 @@ public class CountDown : MonoBehaviour {
 	IEnumerator getReady () { // Function for counting down at the beginning
 
 		cntDown.text = "3";
+        countDown.Play();
 		yield return new WaitForSeconds (1);
 
 		cntDown.text = "2";
+        countDown.Play();
 		yield return new WaitForSeconds (1);
 
 		cntDown.text = "1";
+        countDown.Play();
 		yield return new WaitForSeconds (1);
 
 		cntDown.text = "GO";
+        go.Play();
 		yield return new WaitForSeconds (1);
 
 		cntDown.text = "";

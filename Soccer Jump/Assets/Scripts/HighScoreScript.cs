@@ -14,7 +14,7 @@ public class HighScoreScript : MonoBehaviour {
 			highScore = scoreScript.scoreValue;
 			PlayerPrefs.SetInt ("High Score", highScore);
 		}
-		highestScore.text = "High Score: " + highScore;
+        highestScore.text = highScore.ToString();
 	}
 	
 
