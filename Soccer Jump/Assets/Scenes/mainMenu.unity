@@ -2390,6 +2390,7 @@ MonoBehaviour:
   tutorialTxt: {fileID: 622016688}
   muteTxt: {fileID: 1170094707}
   tapBtn: {fileID: 2134396400}
+  settingsManager: {fileID: 1694654971}
 --- !u!4 &1694654973
 Transform:
   m_ObjectHideFlags: 0
@@ -2730,7 +2731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2134396399
 Transform:
   m_ObjectHideFlags: 0
@@ -2753,7 +2754,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f63c2e28d51b7441a9516027adcaf912, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e109b9ddd99e14a638da09feb676b068, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

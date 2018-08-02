@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,10 +21,33 @@ public class Settings : MonoBehaviour
     public Text muteTxt;
     public AudioSource tapBtn;
 
-    private bool muteisYes = false;
-    private bool tutIsYes = false;
 
+	public void Start()
+	{
+        if(!PlayerPrefs.HasKey("indexTut") && !PlayerPrefs.HasKey("isDisabledTut") && !PlayerPrefs.HasKey("isMuted") && !PlayerPrefs.HasKey("indexMuted")) 
+        {
+            PlayerPrefs.SetInt("indexTut", 0);
+            PlayerPrefs.SetInt("isDisabledTut", 0);
+            PlayerPrefs.SetInt("isMuted", 0);
+            PlayerPrefs.SetInt("indexMuted", 0);
+            Debug.Log("keys initialized");
+        }
+        if(PlayerPrefs.GetInt("isDisabledTut") == 0)
+        {
+            tutorialBtnTxt.text = "no";
+        } else
+        {
+            tutorialBtnTxt.text = "yes";
+        }
+        if(PlayerPrefs.GetInt("isMuted") == 0)
+        {
+            muteBtnTxt.text = "no";
+        } else 
+        {
+            muteBtnTxt.text = "yes";
+        }
 
+	}
 	public void toSettings()
     {
         tapBtn.Play();
@@ -63,29 +87,41 @@ public class Settings : MonoBehaviour
     public void muteSetting()
     {
         tapBtn.Play();
-        if(muteisYes == true)
+        if(PlayerPrefs.GetInt("isMuted") == 0)
         {
-            muteBtnTxt.text = "No";
-            muteisYes = false;
+            PlayerPrefs.SetInt("indexMuted", 1);
+            muteBtnTxt.text = "yes";
+            PlayerPrefs.SetInt("isMuted", PlayerPrefs.GetInt("indexMuted"));
+            PlayerPrefs.Save();
+            Debug.Log(PlayerPrefs.GetInt("isMuted"));
         } else 
         {
-            muteBtnTxt.text = "Yes";
-            muteisYes = true;
+            PlayerPrefs.SetInt("indexMuted", 0);
+            muteBtnTxt.text = "no";
+            PlayerPrefs.SetInt("isMuted", PlayerPrefs.GetInt("indexMuted"));
+            PlayerPrefs.Save();
+            Debug.Log(PlayerPrefs.GetInt("isMuted"));
         }
     }
 
     public void tutorialSetting()
     {
         tapBtn.Play();
-        if (tutIsYes == true)
+        if (PlayerPrefs.GetInt("isDisabledTut") == 0)
         {
-            tutorialBtnTxt.text = "No";
-            tutIsYes = false;
-        }
-        else
+            PlayerPrefs.SetInt("indexTut", 1);
+            tutorialBtnTxt.text = "yes";
+            PlayerPrefs.Save();
+            PlayerPrefs.SetInt("isDisabledTut", PlayerPrefs.GetInt("indexTut"));
+            Debug.Log(PlayerPrefs.GetInt("isDisabledTut"));
+
+        } else
         {
-            tutorialBtnTxt.text = "Yes";
-            tutIsYes = true;
+            PlayerPrefs.SetInt("indexTut", 0);
+            tutorialBtnTxt.text = "no";
+            PlayerPrefs.Save();
+            PlayerPrefs.SetInt("isDisabledTut", PlayerPrefs.GetInt("indexTut"));
+            Debug.Log(PlayerPrefs.GetInt("isDisabledTut"));
         }
     }
 }

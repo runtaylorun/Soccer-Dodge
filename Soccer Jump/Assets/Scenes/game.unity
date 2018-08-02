@@ -773,6 +773,7 @@ MonoBehaviour:
   endScore: {fileID: 1921536758}
   currentCoins: {fileID: 363025970}
   coinsAdded: {fileID: 328588913}
+  highestScore: {fileID: 279988535}
   panel: {fileID: 655972009}
   levelChangingScript1: {fileID: 440603485}
   btnTap: {fileID: 1868086423}
@@ -1254,6 +1255,7 @@ GameObject:
   - component: {fileID: 581690582}
   - component: {fileID: 581690587}
   - component: {fileID: 581690588}
+  - component: {fileID: 581690589}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1357,9 +1359,22 @@ MonoBehaviour:
   endScore: {fileID: 1921536758}
   currentCoins: {fileID: 363025970}
   coinsAdded: {fileID: 328588913}
+  highestScore: {fileID: 279988535}
   panel: {fileID: 655972009}
   levelChangingScript1: {fileID: 440603485}
   btnTap: {fileID: 1868086423}
+--- !u!114 &581690589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 581690581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014de17bb3c7d4ca6bb85f4ef3ac6333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMuted: 0
 --- !u!1 &583868028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1844,7 @@ MonoBehaviour:
   endScore: {fileID: 1921536758}
   currentCoins: {fileID: 363025970}
   coinsAdded: {fileID: 328588913}
+  highestScore: {fileID: 279988535}
   panel: {fileID: 655972009}
   levelChangingScript1: {fileID: 440603485}
   btnTap: {fileID: 1868086423}
@@ -2263,7 +2279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8f9fc2326e57b4b84fd1799a0c18ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cntDown: {fileID: 0}
+  cntDown: {fileID: 1012425741}
   tapDwn: {fileID: 573235637}
   holdDwn: {fileID: 1408774766}
   tapTxt: {fileID: 132993019}
@@ -3133,6 +3149,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1561041136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1561041138}
+  - component: {fileID: 1561041137}
+  m_Layer: 0
+  m_Name: SettingsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1561041137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561041136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f5937a42e8944d6aca41ae0f915756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDisabled: 0
+  tapTxt: {fileID: 132993019}
+  downTxt: {fileID: 552914345}
+  tapImg: {fileID: 573235637}
+  downImg: {fileID: 1408774766}
+--- !u!4 &1561041138
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561041136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 722.1969, y: 299.64038, z: -2.8346038}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570951734
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,7 +3581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1868086422
 Transform:
   m_ObjectHideFlags: 0
@@ -3543,7 +3604,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f63c2e28d51b7441a9516027adcaf912, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e109b9ddd99e14a638da09feb676b068, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

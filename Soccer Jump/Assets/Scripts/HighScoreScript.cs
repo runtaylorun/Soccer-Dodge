@@ -10,16 +10,14 @@ public class HighScoreScript : MonoBehaviour {
 	void Start () {
 		highestScore = GetComponent<Text> ();
 		highScore = PlayerPrefs.GetInt ("High Score"); // Retrives the persistent high score
-		if (scoreScript.scoreValue > highScore) { 	   // Updates the high score after it is beat
-			highScore = scoreScript.scoreValue;
-			PlayerPrefs.SetInt ("High Score", highScore);
-		}
-        highestScore.text = highScore.ToString();
 	}
 	
 
 	void Update () {
-		PlayerPrefs.SetInt ("High Score", highScore);// Holds the value of high score even after you close the app
-
+        if (scoreScript.scoreValue > highScore)
+        {      // Updates the high score after it is beat
+            highScore = scoreScript.scoreValue;
+            PlayerPrefs.SetInt("High Score", highScore);
+        }
 	}
 }

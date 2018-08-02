@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class CountDown : MonoBehaviour {
-	public Text cntDown;
-    public GameObject tapDwn;
-    public GameObject holdDwn;
-    public Text tapTxt;
-    public Text holdTxt;
+	public  Text cntDown;
+    public  GameObject tapDwn;
+    public  GameObject holdDwn;
+    public  Text tapTxt;
+    public  Text holdTxt;
     public static bool neverDone = true;
     public AudioSource countDown;
     public AudioSource go;
-
 
 	void Start() {
 		cntDown = GetComponent<Text>();
@@ -45,11 +44,11 @@ public class CountDown : MonoBehaviour {
         go.Play();
 		yield return new WaitForSeconds (1);
 
-		cntDown.text = "";
+        cntDown.enabled = false;
         tapDwn.SetActive(false);
         holdDwn.SetActive(false);
-        tapTxt.text = "";
-        holdTxt.text = "";
+        tapTxt.enabled = false;
+        holdTxt.enabled = false;
 
 
 	}
