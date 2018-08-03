@@ -9,7 +9,6 @@ public class menuManager : MonoBehaviour {
 
 	public void toGame() {
         PlayerPrefs.Save();
-        btnPress.Play();
         levelChangingScript.FadeToLevel(1);
 	}
 }

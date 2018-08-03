@@ -11,7 +11,11 @@ public class Settings : MonoBehaviour
     public Image tutorialBtn;
     public Image muteBtn;
     public Image menuBtn;
+    public Image leaderBtn;
     public Image title;
+    public Image rateBtn;
+    public Text rateTxt;
+    public Text leaderTxt;
     public Text startBtnText;
     public Text settingsBtnText;
     public Text tutorialBtnTxt;
@@ -56,6 +60,10 @@ public class Settings : MonoBehaviour
         title.enabled = false;
         startBtnText.enabled = false;
         settingsBtnText.enabled = false;
+        leaderTxt.enabled = false;
+        leaderBtn.enabled = false;
+        rateBtn.enabled = false;
+        rateTxt.enabled = false;
         tutorialBtn.enabled = true;
         muteBtn.enabled = true;
         menuBtn.enabled = true;
@@ -74,6 +82,10 @@ public class Settings : MonoBehaviour
         title.enabled = true;
         startBtnText.enabled = true;
         settingsBtnText.enabled = true;
+        leaderBtn.enabled = true;
+        leaderTxt.enabled = true;
+        rateBtn.enabled = true;
+        rateTxt.enabled = true;
         tutorialBtn.enabled = false;
         muteBtn.enabled = false;
         menuBtn.enabled = false;
@@ -86,7 +98,6 @@ public class Settings : MonoBehaviour
 
     public void muteSetting()
     {
-        tapBtn.Play();
         if(PlayerPrefs.GetInt("isMuted") == 0)
         {
             PlayerPrefs.SetInt("indexMuted", 1);
@@ -106,7 +117,6 @@ public class Settings : MonoBehaviour
 
     public void tutorialSetting()
     {
-        tapBtn.Play();
         if (PlayerPrefs.GetInt("isDisabledTut") == 0)
         {
             PlayerPrefs.SetInt("indexTut", 1);

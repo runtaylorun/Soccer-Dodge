@@ -774,9 +774,11 @@ MonoBehaviour:
   currentCoins: {fileID: 363025970}
   coinsAdded: {fileID: 328588913}
   highestScore: {fileID: 279988535}
+  scoreTxt: {fileID: 1248063710}
   panel: {fileID: 655972009}
   levelChangingScript1: {fileID: 440603485}
   btnTap: {fileID: 1868086423}
+  animator: {fileID: 655972014}
 --- !u!4 &419538964
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,9 +1362,11 @@ MonoBehaviour:
   currentCoins: {fileID: 363025970}
   coinsAdded: {fileID: 328588913}
   highestScore: {fileID: 279988535}
+  scoreTxt: {fileID: 1248063710}
   panel: {fileID: 655972009}
   levelChangingScript1: {fileID: 440603485}
   btnTap: {fileID: 1868086423}
+  animator: {fileID: 655972014}
 --- !u!114 &581690589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1796,6 +1800,7 @@ GameObject:
   - component: {fileID: 655972013}
   - component: {fileID: 655972012}
   - component: {fileID: 655972011}
+  - component: {fileID: 655972014}
   m_Layer: 5
   m_Name: deathPanelManager
   m_TagString: Untagged
@@ -1826,7 +1831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 106.03}
+  m_AnchoredPosition: {x: -3, y: 301.2}
   m_SizeDelta: {x: 1028.89, y: 1469.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655972011
@@ -1845,9 +1850,11 @@ MonoBehaviour:
   currentCoins: {fileID: 363025970}
   coinsAdded: {fileID: 328588913}
   highestScore: {fileID: 279988535}
+  scoreTxt: {fileID: 1248063710}
   panel: {fileID: 655972009}
   levelChangingScript1: {fileID: 440603485}
   btnTap: {fileID: 1868086423}
+  animator: {fileID: 655972014}
 --- !u!114 &655972012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,6 +1888,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655972009}
+--- !u!95 &655972014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655972009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57f016bc352184512b1d12577a27429a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &848331850
 GameObject:
   m_ObjectHideFlags: 0

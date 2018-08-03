@@ -10,12 +10,15 @@ public class deathPanelManager : MonoBehaviour {
     public Text currentCoins;
     public Text coinsAdded;
     public Text highestScore;
+    public Text scoreTxt;
 	private moveBall moveBallScript;
 	private bool tempPlayerDead;
 	public GameObject panel;
     public LevelChanger levelChangingScript1;
     public AudioSource btnTap;
+    public Animator animator;
 	void Start () {
+        animator.SetBool("isDead", false);
 		panel.SetActive (false);
 	}
 
@@ -29,17 +32,17 @@ public class deathPanelManager : MonoBehaviour {
             currentCoins.text = "Coins ";
             coinsAdded.text = "Coins Added ";
             highestScore.text = HighScoreScript.highScore.ToString();
+            animator.SetBool("isDead", true);
+            scoreTxt.enabled = false;
 		}
 	}
 
 	public void toGame() {
-        btnTap.Play();
         levelChangingScript1.FadeToLevel(1);
         PlayerPrefs.Save();
 	}
 
 	public void toMenu() {
-        btnTap.Play();
         levelChangingScript1.FadeToLevel(0);
         PlayerPrefs.Save();
 	}
