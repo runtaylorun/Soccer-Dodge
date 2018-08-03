@@ -34,6 +34,7 @@ public class deathPanelManager : MonoBehaviour {
             highestScore.text = HighScoreScript.highScore.ToString();
             animator.SetBool("isDead", true);
             scoreTxt.enabled = false;
+            playGamesScript.AddScoreToLeaderboard(GPGSIds.leaderboard_global_leaderboard, scoreScript.scoreValue);
 		}
 	}
 

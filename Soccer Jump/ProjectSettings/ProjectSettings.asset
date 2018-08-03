@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Taylor Mills
+  companyName: Triple Tap Games
   productName: Soccer Dodge
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -117,7 +117,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -150,14 +150,14 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.TaylorMills.SoccerDodge
+    Android: lls.TripleTapGames.SoccerDodge
     Standalone: unity.Taylor Mills.Soccer Dodge
     Tizen: com.TaylorMills.SoccerDodge
     iOS: com.TaylorMills.SoccerDodge
     tvOS: com.TaylorMills.SoccerDodge
   buildNumber:
     iOS: 0
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -245,8 +245,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: /Users/taylormills/Desktop/SoccerDodge.keystore
+  AndroidKeyaliasName: soccerdodge
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
@@ -633,7 +633,8 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
   webGLLinkerTarget: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    4: NO_GPGS
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

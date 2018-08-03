@@ -11,4 +11,9 @@ public class menuManager : MonoBehaviour {
         PlayerPrefs.Save();
         levelChangingScript.FadeToLevel(1);
 	}
+
+    public void toLeaderboard()
+    {
+        playGamesScript.ShowLeaderboardsUI();
+    }
 }

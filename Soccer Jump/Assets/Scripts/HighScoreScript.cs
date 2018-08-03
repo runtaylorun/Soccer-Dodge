@@ -18,6 +18,7 @@ public class HighScoreScript : MonoBehaviour {
         {      // Updates the high score after it is beat
             highScore = scoreScript.scoreValue;
             PlayerPrefs.SetInt("High Score", highScore);
+            playGamesScript.AddScoreToLeaderboard(GPGSIds.leaderboard_global_leaderboard, scoreScript.scoreValue);
         }
 	}
 }
