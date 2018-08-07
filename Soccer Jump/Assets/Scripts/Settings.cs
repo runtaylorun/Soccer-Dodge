@@ -13,8 +13,6 @@ public class Settings : MonoBehaviour
     public Image menuBtn;
     public Image leaderBtn;
     public Image title;
-    public Image rateBtn;
-    public Text rateTxt;
     public Text leaderTxt;
     public Text startBtnText;
     public Text settingsBtnText;
@@ -62,8 +60,6 @@ public class Settings : MonoBehaviour
         settingsBtnText.enabled = false;
         leaderTxt.enabled = false;
         leaderBtn.enabled = false;
-        rateBtn.enabled = false;
-        rateTxt.enabled = false;
         tutorialBtn.enabled = true;
         muteBtn.enabled = true;
         menuBtn.enabled = true;
@@ -84,8 +80,6 @@ public class Settings : MonoBehaviour
         settingsBtnText.enabled = true;
         leaderBtn.enabled = true;
         leaderTxt.enabled = true;
-        rateBtn.enabled = true;
-        rateTxt.enabled = true;
         tutorialBtn.enabled = false;
         muteBtn.enabled = false;
         menuBtn.enabled = false;

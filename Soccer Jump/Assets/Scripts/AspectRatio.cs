@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AspectRatio : MonoBehaviour {
 
-	float originalWidth = 1920f;
-	float originalHeight = 1080f;
-	void Start () {
-		gameObject.GetComponent<Camera>().aspect = (originalWidth / originalHeight) * (Screen.width / Screen.height);
-	}
+    public float width = 16f;
+    public float height = 9f;
+
+    void Awake()
+    {
+        Camera.main.aspect = width / height;
+    }
 }
